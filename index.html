@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Risk of Rain 2 Build Planner</title>
+	<meta name="description" content="Plan your Risk of Rain 2 build! Build planner and item and equipment reference." />
+
+	<link rel="alternate" hreflang="en" href="http://example.com/en">
+
+	<link rel="apple-touch-icon" href="img/favicon-192.png?v=1790832182" sizes="192x192">
+	<link rel="icon" href="img/favicon-192.png?v=1790832182" sizes="192x192">
+
+	<link href="dist/css/reset.css" rel="stylesheet">
+	<link href="https://unpkg.com/tippy.js@6/animations/scale.css?v=6.3.7" rel="stylesheet">
+	<link href="https://unpkg.com/tippy.js@6/dist/svg-arrow.css?v=6.3.7" rel="stylesheet">
+	<link href="dist/css/style.css?v=1790832182" rel="stylesheet" >
+	<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+	<script>
+		const siteTitle = "Risk of Rain 2 Build Planner";
+		const types = ["w","g","r","y","b","p","o","l","e","m"];
+		const wikiURL = "https://riskofrain2.wiki.gg";
+	</script>
+</head>
+<body>
+
+<section id="main">
+	<header id="header">
+		<h1><a href="index.html">Risk of Rain 2 Build Planner</a></h1>
+		<div class="search">
+			<div class="search-wrapper">
+				<input type="text" name="s" placeholder="Search" required>
+				<div class="clear" data-tippy-content="Clear"></div>
+			</div>
+			<span class="fa-solid fa-circle-question help" data-tippy-content="Search by text or regular expression."></span>
+		</div>
+		<div class="meta">
+			<ul>
+				<li class="meta-preferences">
+					<span class="preferences tooltip-link"><span class="fa-solid fa-sliders"></span> Settings</span>
+					<div id="preferences" class="tooltip-template">
+						<div class="preferences-form tooltip-form">
+							<label>
+								<span class="label">Columns</span>
+								<input type="number" class="pref-groups-per-row" min="1" max="10" placeholder="Auto">
+							</label>
+						</div>
+					</div>
+				</li>
+				<li class="meta-about">
+					<span class="about tooltip-link" data-tippy-html="about" data-tippy-trigger="click"><span class="fa-solid fa-circle-info"></span> About</span>
+					<div id="about" class="tooltip-template">
+						<p><strong>About this Tool</strong></p>
+						<p>Plan your Risk of Rain 2 build! Build planner and item and equipment reference.</p>
+						<p>Share your builds with others.</p>
+						<hr>
+						<p><strong>How to Use</strong></p>
+						<div>&ndash; Left click or drag items into your build.</div>
+						<div>&ndash; Left click your items to increase the quantity. Right click to remove or decrease quantity.</div>
+						<div>&ndash; You can rearrange your items to define a priority and merge duplicates together.</div>
+					</div>
+				</li>
+				<li class="meta-wiki"><a href="https://riskofrain2.wiki.gg" target="_blank">Wiki</a></li>
+				<li class="meta-version"><span>Updated to v1.4.1</span></li>
+			</ul>
+		</div>
+	</header>
+	<div class="settings">
+		<div class="field checkbox field-types">
+			<label>Types</label>
+			<div class="field-wrapper">
+				<ul>
+					<li><label class="checkbox"><input type="checkbox" name="settings-types" value="w"><span class="label">Common</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-types" value="g"><span class="label">Uncommon</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-types" value="r"><span class="label">Legendary</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-types" value="y"><span class="label">Boss / Planet</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-types" value="b"><span class="label">Lunar Items</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-types" value="p"><span class="label">Void</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-types" value="m"><span class="label">Meal</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-types" value="o"><span class="label">Equipment</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-types" value="l"><span class="label">Lunar Equipment</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-types" value="e"><span class="label">Elite Equipment</span></label></li>				</ul>
+			</div>
+		</div>
+		<div class="field checkbox field-items">
+			<label>Items</label>
+			<div class="field-wrapper">
+				<ul>
+					<li><label class="checkbox"><input type="checkbox" name="settings-dlc" value="vanilla"><span class="label">Vanilla</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-dlc" value="sotv"><span class="label">SotV</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-dlc" value="sots"><span class="label">SotS</span></label></li><li><label class="checkbox"><input type="checkbox" name="settings-dlc" value="ac"><span class="label">AC</span></label></li>
+				</ul>
+			</div>
+		</div>
+		<div class="field field-manage">
+			<label>Manage Build <span class="fa-solid fa-circle-question help" data-tippy-content="Saved builds will be stored in your browser on this device. Use the export and import tools to move builds between devices."></span></label>
+			<div class="field-wrapper">
+				<ul>
+					<li><input type="text" name="settings-name" value="" placeholder="Untitled Build"></li>
+					<li class="field save"><button class="button">Save</button></li>
+					<li class="field load"><button class="button">Load</button></li>
+					<li class="field import"><button class="button">Import</button></li>
+					<li class="field export"><button class="button">Export</button></li>
+					<li class="field share"><button class="button">Share</button></li>
+					<li class="field reset"><button class="button">Reset</button></li>
+				</ul>
+			</div>
+		</div>
+		<div class="field buttons field-tools">
+			<label>Tools</label>
+			<div class="field-wrapper">
+				<ul>
+					<li class="field proc-sim">
+						<button class="button">Proc Sim</button>
+						<div id="proc-sim" class="tooltip-template">
+							<h5 class="tooltip-title">Proc Coefficient Calculator <span class="fa-solid fa-circle-question help" data-tippy-content="Use this form to calculate the probability of attack and item hits proccing. This is mostly useful for attacks and on-hit items that have a proc chance less than 1.&#13;&#13;For example, you can calculate the probability of Ukulele triggering from MUL-T's Auto-Nailgun at 200% attack speed."></span></h5>
+							<div class="proc-sim-form tooltip-form">
+								<ul class="fields">
+									<li>
+										<input type="number" id="attack-proc-coef" class="attack-proc-coef" step="0.1" value="1">
+										<label for="attack-proc-coef">Attack Proc Coefficient <span class="fa-solid fa-circle-question help" data-tippy-content="Proc coefficient of the attack."></span></label>
+									</li>
+									<li>
+										<input type="number" id="attack-hits" class="attack-hits" step="0.1" value="1">
+										<label for="attack-hits">Hits Per Attack <span class="fa-solid fa-circle-question help" data-tippy-content="How many hits per attack. Set this to 1 for single shot attacks like Bandit's Desparado, or 12 for MULT's Auto-Nailgun."></span></label>
+									</li>
+									<li>
+										<input type="number" id="attack-duration" class="attack-duration" step="0.1" value="1">
+										<label for="attack-duration">Attack Duration (Seconds) <span class="fa-solid fa-circle-question help" data-tippy-content="How long the attack takes to complete in seconds."></span></label>
+									</li>
+									<li>
+										<input type="number" id="attack-speed" class="attack-speed" step="0.1" value="1">
+										<label for="attack-speed">Attack Speed Multiplier <span class="fa-solid fa-circle-question help" data-tippy-content="Use this to modify the attack speed calculation rather than adjusting attack hits or attack duration."></span></label>
+									</li>
+									<li>
+										<input type="number" id="attack-count" class="attack-count" step="1" value="1">
+										<label for="attack-count">Number of Attacks to Simulate <span class="fa-solid fa-circle-question help" data-tippy-content="How many repeated attacks (shots) you want to simulate."></span></label>
+									</li>
+									<li>
+										<input type="number" id="sim-count" class="sim-count" step="1" value="500">
+										<label for="sim-count">Number of Simulations to Run <span class="fa-solid fa-circle-question help" data-tippy-content="How many times the simulation should be repeated. Results are averaged over all sim runs."></span></label>
+									</li>
+									<li>
+										<input type="number" id="item-proc" class="item-proc" step="0.1" value="1">
+										<label for="item-proc">Item Proc Coefficient <span class="fa-solid fa-circle-question help" data-tippy-content="Proc coefficient of the item. e.g. 0.1 for Ukulele."></span></label>
+									</li>
+									<li>
+										<input type="number" id="clovers" class="clovers" step="1" value="0">
+										<label for="clovers">57 Leaf Clovers <span class="fa-solid fa-circle-question help" data-tippy-content="How many clovers you have."></span></label>
+									</li>
+								</ul>
+
+								<button class="button simulate">Simluate</button>
+								<div id="proc-sim-output"></div>
+							</div>
+						</div>
+					</li>
+					<li class="field gotd">
+						<button class="button">GotD</button>
+						<div id="gotd" class="tooltip-template">
+							<h5 class="tooltip-title">Gesture of the Drowned Calculator</h5>
+							<div class="gotd-form tooltip-form"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="groups">
+		<div class="group type-w options" data-type="w"><header><h3>Common</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-g options" data-type="g"><header><h3>Uncommon</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-r options" data-type="r"><header><h3>Legendary</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-y options" data-type="y"><header><h3>Boss / Planet</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-b options" data-type="b"><header><h3>Lunar Items</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-p options" data-type="p"><header><h3>Void</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-o options" data-type="o"><header><h3>Equipment</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-m options" data-type="m"><header><h3>Meal</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-l options" data-type="l"><header><h3>Lunar Equipment</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-e options" data-type="e"><header><h3>Elite Equipment</h3></header><div class="items"></div><div class="delete-dropzone"></div></div><div class="group type-w picks" data-type="w"><div class="items"></div></div><div class="group type-g picks" data-type="g"><div class="items"></div></div><div class="group type-r picks" data-type="r"><div class="items"></div></div><div class="group type-y picks" data-type="y"><div class="items"></div></div><div class="group type-b picks" data-type="b"><div class="items"></div></div><div class="group type-p picks" data-type="p"><div class="items"></div></div><div class="group type-o picks" data-type="o"><div class="items"></div></div><div class="group type-m picks" data-type="m"><div class="items"></div></div><div class="group type-l picks" data-type="l"><div class="items"></div></div><div class="group type-e picks" data-type="e"><div class="items"></div></div>	</div>
+</section>
+<div id="notices"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2?v=6.3.7"></script>
+<script src="https://unpkg.com/tippy.js@6?v=6.3.7"></script>
+<script src="vendor/Sortable.min.js?v=1.15.0"></script>
+	<script src="db.js?v=1790832138"></script>
+	<script src="app.js?v=1790832138"></script>
+	<script src="sims.js?v=1790832138"></script>
+
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-B25WRSE9F9');
+</script>
+
+</body>
+</html>
